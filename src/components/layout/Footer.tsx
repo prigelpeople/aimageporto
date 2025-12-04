@@ -1,33 +1,22 @@
 import React from 'react';
-import { DecryptedText } from '../ui';
+import { TextPressure } from '../ui';
 
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-black text-white relative overflow-hidden">
       {/* Large Background Text */}
       <div className="relative py-16 md:py-24">
-        <h2 className="text-[25vw] md:text-[20vw] font-bold leading-[0.85] tracking-tighter text-white/100 select-none text-center flex flex-col items-center">
-          <DecryptedText 
-            text="PRIGEL" 
-            animateOn="view"
-            speed={80}
-            maxIterations={15}
-            sequential={true}
-            revealDirection="center"
-            className="text-white/80"
-            encryptedClassName="text-white/30"
+        <div className="h-[20vw] md:h-[15vw]">
+          <TextPressure
+            text="PRIGEL PEOPLE"
+            textColor="rgba(255,255,255,0.8)"
+            weight={true}
+            width={true}
+            italic={false}
+            flex={true}
+            minFontSize={48}
           />
-          <DecryptedText 
-            text="PEOPLE" 
-            animateOn="view"
-            speed={60}
-            maxIterations={20}
-            sequential={true}
-            revealDirection="center"
-            className="text-white/80"
-            encryptedClassName="text-white/30"
-          />
-        </h2>
+        </div>
       </div>
 
       {/* Footer Content */}

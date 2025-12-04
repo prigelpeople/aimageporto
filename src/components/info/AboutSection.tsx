@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
 
         <div className="mt-16 md:mt-24 flex flex-col gap-8">
             <div>
-                <h3 className="text-4xl md:text-5xl font-light uppercase tracking-wide leading-tight">Sophia<br/>Reynolds</h3>
+                <h3 className="text-4xl md:text-5xl font-light uppercase tracking-wide leading-tight">Rachmatulla</h3>
                 <p className="text-xs text-gray-400 mt-3 uppercase tracking-widest font-medium">[Creative Director]</p>
             </div>
             
@@ -84,8 +84,8 @@ const AboutSection: React.FC = () => {
             className="self-end text-right max-w-[240px] mb-12 md:mb-0"
          >
             <p className="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">
-                We are a visual design studio that combines photo shoots with ideas.<br/>
-                [EST. 1998]
+                An AI-powered creative studio that makes your imagination real. From concept to hyper-real visuals, we craft images that drive impact and elevate your brand.<br/>
+                [EST. 2025]
             </p>
          </motion.div>
 

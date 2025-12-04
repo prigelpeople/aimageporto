@@ -108,7 +108,7 @@ const BeforeAfterSlider: React.FC = () => {
         onTouchStart={handleTouchStart}
     >
       <img 
-        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop" 
+        src="/images/compare.jpg" 
         alt="After" 
         className="absolute inset-0 w-full h-full object-cover"
         draggable={false}
@@ -123,7 +123,7 @@ const BeforeAfterSlider: React.FC = () => {
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop" 
+            src="/images/compare.jpg" 
             alt="Before" 
             className="absolute inset-0 w-full h-full object-cover filter contrast-[0.85] brightness-[0.9] sepia-[0.2]"
             draggable={false}

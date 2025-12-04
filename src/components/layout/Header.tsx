@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       </div>
       
       <div className="absolute left-1/2 transform -translate-x-1/2">
-        <h1 className="text-sm md:text-base font-bold tracking-[0.2em] uppercase">Pure Contrast</h1>
+        <h1 className="text-sm md:text-base font-bold tracking-[0.2em] uppercase">Rachmatulla | PrigelPeople</h1>
       </div>
 
       <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-gray-500 uppercase tracking-wider">

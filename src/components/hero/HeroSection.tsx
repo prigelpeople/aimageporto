@@ -97,7 +97,7 @@ const HeroSection: React.FC = () => {
              className="w-full md:w-1/4 text-xs md:text-sm text-gray-500 leading-relaxed text-justify"
           >
             <p>
-              A creative studio that creates visual meanings for brands and people. We help businesses speak the language of form, space, and typography. Minimal noise — maximum ideas.
+              An AI-powered creative studio showcasing generative art for brands and individuals. We translate concepts into visual language using design, space, and typography. Minimal distractions maximum impact.
             </p>
           </motion.div>
 
@@ -112,7 +112,7 @@ const HeroSection: React.FC = () => {
               <Play className="w-5 h-5 fill-current ml-1" />
             </button>
             <p className="text-sm text-gray-600">
-              Just write it down, and we will thoughtfully transform your idea into a visual form.
+              Share your vision, and we’ll shape it into visuals that speak for themselves.
             </p>
           </motion.div>
         </div>
@@ -125,9 +125,9 @@ const HeroSection: React.FC = () => {
           viewport={{ once: true }}
           className="absolute bottom-0 left-0 w-full text-center pointer-events-none mix-blend-overlay opacity-20 md:translate-y-1/4"
         >
-          <h1 className="text-[16vw] leading-[0.75] font-semibold text-gray-200 tracking-tighter">
-            Design<br />
-            <span className="ml-[15%]">With Intent</span>
+          <h1 className="text-[12vw] leading-[0.75] font-semibold text-gray-200 tracking-tighter">
+            Visuals<br />
+            <span className="ml-[15%]">With Vision</span>
           </h1>
         </motion.div>
       </div>
