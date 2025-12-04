@@ -175,10 +175,10 @@ const WorkflowSection: React.FC = () => {
         title: 'Shooting & Post-Production',
         description: "Execution with precision. From the actual shoot to high-end retouching, we ensure every pixel aligns with the intended aesthetic.",
         images: [
-            'https://picsum.photos/seed/shoot1/300/400',
-            'https://picsum.photos/seed/shoot2/300/400',
-            'https://picsum.photos/seed/shoot3/300/400',
-            'https://picsum.photos/seed/shoot4/300/400',
+            '/images/shoot1.jpg',
+            '/images/shoot2.jpg',
+            '/images/shoot3.jpg',
+            '/images/shoot4.jpg',
         ]
     },
     { 
@@ -219,7 +219,7 @@ const WorkflowSection: React.FC = () => {
                       className="text-[10vw] md:text-[7vw] lg:text-[7.5vw] leading-[0.9] tracking-tighter uppercase"
                     />
                     <span className="inline-block w-[12vw] h-[8vw] md:w-[6.5vw] md:h-[4.5vw] overflow-hidden rounded-md bg-gray-800 self-center mt-1 md:mt-2 transform rotate-2">
-                        <img src="https://picsum.photos/seed/concert/400/300" className="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-500" alt="icon" />
+                        <img src="/images/concert.jpg" className="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-500" alt="icon" />
                     </span>
                     <VariableProximity
                       label="BECOMES YOUR"
@@ -243,7 +243,7 @@ const WorkflowSection: React.FC = () => {
                       className="text-[10vw] md:text-[7vw] lg:text-[7.5vw] leading-[0.9] tracking-tighter uppercase"
                     />
                     <span className="inline-block w-[16vw] h-[10vw] md:w-[9vw] md:h-[5.5vw] overflow-hidden rounded-md bg-gray-800 self-center mt-1 md:mt-2 -rotate-2">
-                        <img src="https://picsum.photos/seed/nature/600/400" className="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500" alt="visual" />
+                        <img src="/images/nature.jpg" className="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500" alt="visual" />
                     </span>
                     <VariableProximity
                       label="A"

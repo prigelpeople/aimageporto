@@ -15,12 +15,12 @@ interface ExtendedGallerySectionProps {
 
 const ExtendedGallerySection: React.FC<ExtendedGallerySectionProps> = ({ items }) => {
   const defaultItems: GalleryItem[] = [
-    { src: "https://picsum.photos/seed/gallery1/600/750", alt: "Gallery 1", title: "Urban Dreams", tags: ["Portrait", "Editorial"] },
-    { src: "https://picsum.photos/seed/gallery2/600/750", alt: "Gallery 2", title: "Natural Light", tags: ["Nature", "Lifestyle"] },
-    { src: "https://picsum.photos/seed/gallery3/600/750", alt: "Gallery 3", title: "Studio Session", tags: ["Fashion", "Studio"] },
-    { src: "https://picsum.photos/seed/gallery4/600/750", alt: "Gallery 4", title: "Street Style", tags: ["Street", "Documentary"] },
-    { src: "https://picsum.photos/seed/gallery5/600/750", alt: "Gallery 5", title: "Golden Hour", tags: ["Outdoor", "Portrait"] },
-    { src: "https://picsum.photos/seed/gallery6/600/750", alt: "Gallery 6", title: "Minimalist", tags: ["Product", "Commercial"] },
+    { src: "/images/gallery1.jpg", alt: "Gallery 1", title: "Urban Dreams", tags: ["Portrait", "Editorial"] },
+    { src: "/images/gallery2.jpg", alt: "Gallery 2", title: "Natural Light", tags: ["Nature", "Lifestyle"] },
+    { src: "/images/gallery3.jpg", alt: "Gallery 3", title: "Studio Session", tags: ["Fashion", "Studio"] },
+    { src: "/images/gallery4.jpg", alt: "Gallery 4", title: "Street Style", tags: ["Street", "Documentary"] },
+    { src: "/images/gallery5.jpg", alt: "Gallery 5", title: "Golden Hour", tags: ["Outdoor", "Portrait"] },
+    { src: "/images/gallery6.jpg", alt: "Gallery 6", title: "Minimalist", tags: ["Product", "Commercial"] },
   ];
 
   const displayItems = items || defaultItems;

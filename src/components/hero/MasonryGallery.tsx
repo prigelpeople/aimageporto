@@ -7,12 +7,12 @@ interface MasonryGalleryProps {
 
 const MasonryGallery: React.FC<MasonryGalleryProps> = ({ images }) => {
   const defaultImages = [
-    "https://picsum.photos/seed/masonry1/300/400",
-    "https://picsum.photos/seed/masonry2/300/300",
-    "https://picsum.photos/seed/masonry3/300/500",
-    "https://picsum.photos/seed/masonry4/300/350",
-    "https://picsum.photos/seed/masonry5/300/450",
-    "https://picsum.photos/seed/masonry6/300/300",
+    "/images/masonry1.jpg",
+    "/images/masonry2.jpg",
+    "/images/masonry3.jpg",
+    "/images/masonry4.jpg",
+    "/images/masonry5.jpg",
+    "/images/masonry6.jpg",
   ];
 
   const displayImages = images || defaultImages;

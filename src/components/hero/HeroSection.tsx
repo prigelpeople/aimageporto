@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="aspect-[4/5] overflow-hidden">
             <img 
-              src="https://picsum.photos/seed/photographer/600/800" 
+              src="/images/photographer.jpg" 
               alt="Photographer" 
               className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform"
             />
@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="w-2/3 aspect-[3/4] overflow-hidden">
             <img 
-              src="https://picsum.photos/seed/sunglasses/600/400" 
+              src="/images/sunglasses.jpg" 
               alt="Model" 
               className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform"
             />

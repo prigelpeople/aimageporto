@@ -8,23 +8,23 @@ const Footer: React.FC = () => {
       <div className="relative py-16 md:py-24">
         <h2 className="text-[25vw] md:text-[20vw] font-bold leading-[0.85] tracking-tighter text-white/100 select-none text-center flex flex-col items-center">
           <DecryptedText 
-            text="PURE" 
+            text="PRIGEL" 
             animateOn="view"
             speed={80}
             maxIterations={15}
             sequential={true}
             revealDirection="center"
-            className="text-white/60"
+            className="text-white/80"
             encryptedClassName="text-white/30"
           />
           <DecryptedText 
-            text="CONTRAST" 
+            text="PEOPLE" 
             animateOn="view"
             speed={60}
             maxIterations={20}
             sequential={true}
             revealDirection="center"
-            className="text-white/60"
+            className="text-white/80"
             encryptedClassName="text-white/30"
           />
         </h2>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           {/* Column 3 - Location */}
           <div className="flex flex-col gap-3">
             <p className="text-lg md:text-xl">
-              Jakarta, Indonesia
+              Nganjuk, East Java, Indonesia
             </p>
             <p className="text-lg md:text-xl">
               Available Worldwide
