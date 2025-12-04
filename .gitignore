@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -13,16 +13,36 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# Next.js (legacy)
+.next/
+.next-dev/
+.next-static/
+.next-cache/
 
-# production
-/build
+# Vite
+dist/
+.vite/
+
+# Build outputs
+build/
+out/
+
+# Cache
+.cache/
+.turbo/
+turbopack/
+
+# Server artifacts
+server/
+static/
+
+# Diagnostics
+diagnostics/
 
 # misc
 .DS_Store
 *.pem
+*.local
 
 # debug
 npm-debug.log*
@@ -39,3 +59,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
