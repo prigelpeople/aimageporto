@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { Play } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLightbox } from '../../App';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
 const HeroSection: React.FC = () => {
+  const { openLightbox } = useLightbox();
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,7 +31,10 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="w-full md:w-[22%] mb-8 md:mb-0 z-10 md:mt-12"
         >
-          <div className="aspect-[4/5] overflow-hidden">
+          <div 
+            className="aspect-[4/5] overflow-hidden cursor-zoom-in"
+            onClick={() => openLightbox(`${BASE_URL}images/photographer.jpg`)}
+          >
             <img 
               src={`${BASE_URL}images/photographer.jpg`}
               alt="Photographer" 
@@ -77,7 +82,10 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="w-full md:w-[22%] flex justify-end mt-8 md:mt-48 z-10"
         >
-          <div className="w-2/3 aspect-[3/4] overflow-hidden">
+          <div 
+            className="w-2/3 aspect-[3/4] overflow-hidden cursor-zoom-in"
+            onClick={() => openLightbox(`${BASE_URL}images/sunglasses.jpg`)}
+          >
             <img 
               src={`${BASE_URL}images/sunglasses.jpg`}
               alt="Model" 

@@ -2,10 +2,12 @@ import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MasonryGallery } from '../hero';
+import { useLightbox } from '../../App';
 
 const BASE_URL = import.meta.env.BASE_URL;
 
 const AboutSection: React.FC = () => {
+  const { openLightbox } = useLightbox();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -26,7 +28,8 @@ const AboutSection: React.FC = () => {
             <div className="flex gap-4 items-end">
                 <motion.div 
                     style={{ y: yImg1 }}
-                    className="w-2/3 aspect-[3/4] overflow-hidden"
+                    className="w-2/3 aspect-[3/4] overflow-hidden cursor-zoom-in"
+                    onClick={() => openLightbox(`${BASE_URL}images/blonde1.jpg`)}
                 >
                     <img 
                       src={`${BASE_URL}images/blonde1.jpg`}
@@ -36,7 +39,8 @@ const AboutSection: React.FC = () => {
                 </motion.div>
                 <motion.div 
                      style={{ y: yImg2 }}
-                     className="w-1/3 aspect-[3/4] overflow-hidden mb-12"
+                     className="w-1/3 aspect-[3/4] overflow-hidden mb-12 cursor-zoom-in"
+                     onClick={() => openLightbox(`${BASE_URL}images/blonde2.jpg`)}
                 >
                     <img 
                       src={`${BASE_URL}images/blonde2.jpg`}
@@ -114,7 +118,10 @@ const AboutSection: React.FC = () => {
             className="flex gap-3 mt-8"
          >
             {/* Large image left */}
-            <div className="w-1/2 aspect-[3/4] overflow-hidden">
+            <div 
+              className="w-1/2 aspect-[3/4] overflow-hidden cursor-zoom-in"
+              onClick={() => openLightbox(`${BASE_URL}images/wolf.jpg`)}
+            >
               <img 
                 src={`${BASE_URL}images/wolf.jpg`}
                 alt="Studio work" 
@@ -123,14 +130,20 @@ const AboutSection: React.FC = () => {
             </div>
             {/* Two stacked images right */}
             <div className="w-1/2 flex flex-col gap-3">
-              <div className="flex-1 overflow-hidden">
+              <div 
+                className="flex-1 overflow-hidden cursor-zoom-in"
+                onClick={() => openLightbox(`${BASE_URL}images/horse.jpg`)}
+              >
                 <img 
                   src={`${BASE_URL}images/horse.jpg`}
                   alt="Creative process" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                 />
               </div>
-              <div className="h-[45%] overflow-hidden">
+              <div 
+                className="h-[45%] overflow-hidden cursor-zoom-in"
+                onClick={() => openLightbox(`${BASE_URL}images/desert.jpg`)}
+              >
                 <img 
                   src={`${BASE_URL}images/desert.jpg`}
                   alt="Behind the scenes" 
