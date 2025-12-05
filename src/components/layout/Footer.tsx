@@ -24,27 +24,27 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Column 1 - Contact */}
           <div className="flex flex-col gap-3">
-            <a href="mailto:hello@purecontrast.co" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              hello@purecontrast.co
+            <a href="mailto:prigel.creative@gmail.com" className="text-lg md:text-xl hover:text-white/70 transition-colors">
+              prigel.creative@gmail.com
             </a>
             <a href="#" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              X
+              
             </a>
             <a href="#" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              LinkedIn
+              
             </a>
           </div>
 
           {/* Column 2 - Links */}
           <div className="flex flex-col gap-3">
             <a href="#" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              Portfolio
+              
             </a>
             <a href="#" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              Services
+              
             </a>
             <a href="#" className="text-lg md:text-xl hover:text-white/70 transition-colors">
-              About Us
+              
             </a>
           </div>
 
@@ -70,11 +70,11 @@ const Footer: React.FC = () => {
                 Some rights reserved, all work considered.
               </p>
               <p className="text-sm text-white/60">
-                &copy; {new Date().getFullYear()}, Pure Contrast.
+                &copy; {new Date().getFullYear()}, PrigelPeople.
               </p>
             </div>
             <p className="text-xs text-white/40 md:text-right max-w-xs">
-              Pure Contrast is a creative studio specializing in AI-generated photography and visual storytelling.
+              PrigelPeople creative studio specializing in AI-generated photography and visual storytelling.
             </p>
           </div>
         </div>

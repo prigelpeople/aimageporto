@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, useRef, useEffect, RefObject, HTMLAttributes } from 'react';
+import React, { forwardRef, useMemo, useRef, useEffect, RefObject, HTMLAttributes } from 'react';
 import { motion } from 'framer-motion';
 
 type Callback = () => void;

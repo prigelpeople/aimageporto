@@ -1,6 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# =============================================================================
+# DEPENDENCIES
+# =============================================================================
 node_modules/
 /.pnp
 .pnp.*
@@ -10,58 +12,83 @@ node_modules/
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# Next.js (legacy)
-.next/
-.next-dev/
-.next-static/
-.next-cache/
-
-# Vite
+# =============================================================================
+# BUILD OUTPUTS
+# =============================================================================
 dist/
-.vite/
-
-# Build outputs
 build/
 out/
+.vite/
+*.tsbuildinfo
 
-# Cache
+# =============================================================================
+# CACHE & TEMPORARY FILES
+# =============================================================================
 .cache/
 .turbo/
 turbopack/
+*.tmp
+*.temp
 
-# Server artifacts
-server/
-static/
+# =============================================================================
+# TESTING
+# =============================================================================
+coverage/
+.nyc_output/
 
-# Diagnostics
-diagnostics/
-
-# misc
-.DS_Store
+# =============================================================================
+# ENVIRONMENT & SECRETS
+# =============================================================================
+.env
+.env.*
+!.env.example
 *.pem
-*.local
+*.key
+*.crt
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# =============================================================================
+# OS GENERATED FILES
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# Editor
+# =============================================================================
+# EDITOR & IDE
+# =============================================================================
 .idea/
 .vscode/
 *.swp
 *.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.settings/
+
+# =============================================================================
+# DEBUG LOGS
+# =============================================================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# =============================================================================
+# DEPLOYMENT
+# =============================================================================
+.vercel
+.netlify
+
+# =============================================================================
+# LEGACY (Next.js - removed)
+# =============================================================================
+.next/
+next-env.d.ts

@@ -108,7 +108,7 @@ const BeforeAfterSlider: React.FC = () => {
         onTouchStart={handleTouchStart}
     >
       <img 
-        src="/images/compare.jpg" 
+        src="/images/compare2.jpg" 
         alt="After" 
         className="absolute inset-0 w-full h-full object-cover"
         draggable={false}
@@ -123,9 +123,9 @@ const BeforeAfterSlider: React.FC = () => {
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-            src="/images/compare.jpg" 
+            src="/images/compare1.jpg" 
             alt="Before" 
-            className="absolute inset-0 w-full h-full object-cover filter contrast-[0.85] brightness-[0.9] sepia-[0.2]"
+            className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
         />
         <div className="absolute top-8 left-6 md:left-12 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full z-10 pointer-events-none">
@@ -147,7 +147,7 @@ const BeforeAfterSlider: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
         viewport={{ once: true }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-widest pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-black/50 text-xs tracking-widest pointer-events-none"
       >
         DRAG TO COMPARE
       </motion.div>
@@ -160,37 +160,32 @@ const WorkflowSection: React.FC = () => {
   const textContainerRef = useRef<HTMLDivElement>(null);
 
   const steps = [
-    { 
-        id: 1, 
-        title: 'Concept & Moodboarding',
-        description: "We start by decoding your vision, researching market trends, and curating moodboards that establish a distinct visual language for your project."
-    },
-    { 
-        id: 2, 
-        title: 'Set & Light Design',
-        description: "Our team designs immersive physical or digital environments, meticulously planning lighting setups to create depth, drama, and the perfect atmosphere."
-    },
-    { 
-        id: 3, 
-        title: 'Shooting & Post-Production',
-        description: "Execution with precision. From the actual shoot to high-end retouching, we ensure every pixel aligns with the intended aesthetic.",
-        images: [
-            '/images/shoot1.jpg',
-            '/images/shoot2.jpg',
-            '/images/shoot3.jpg',
-            '/images/shoot4.jpg',
-        ]
-    },
-    { 
-        id: 4, 
-        title: 'Styling & Art Direction',
-        description: "Curating the finer details—wardrobe, props, and composition—to ensure a cohesive narrative that speaks to your audience."
-    },
-    { 
-        id: 5, 
-        title: 'Advanced Retouch & Color',
-        description: "The final polish. We apply color grading and advanced retouching techniques to bring out the richness and mood of the final imagery."
-    },
+{ 
+  id: 1, 
+  title: 'Decode the Brief',
+  description: "We begin by understanding your ideas, exploring creative directions, and shaping moodboards that transform imagination into a clear visual identity powered by AI."
+},
+{ 
+  id: 2, 
+  title: 'Sample First Look',
+  description: "We generate sample images through AI workflows, experimenting with styles, compositions, and tones to provide you with tangible previews that capture the essence of your imagination."
+},
+{ 
+  id: 3, 
+  title: 'Final Glow Up',
+  description: "We refine and craft the final image, polishing every detail with precision so that the outcome not only reflects your vision but also delivers a professional, immersive visual experience."
+},
+{ 
+  id: 4, 
+  title: 'Upscaling and Boost',
+  description: "Using advanced upscaling techniques, we enhance resolution, texture, and clarity, ensuring your visuals achieve hyper‑real quality that is ready for both digital and physical applications.",
+},
+{ 
+  id: 5, 
+  title: 'Deliver & Feedback Loop',
+  description: "Finally, we deliver the completed visuals and gather your feedback, making adjustments where needed to guarantee that the final result fully embodies your expectations and creative intent."
+}
+
   ];
 
   return (
@@ -268,7 +263,7 @@ const WorkflowSection: React.FC = () => {
                     />
                     <div className="inline-block w-auto max-w-[150px] md:max-w-[260px] self-center mt-1 md:mt-3">
                         <p className="text-[9px] md:text-xs lg:text-sm font-normal tracking-normal normal-case leading-tight text-gray-400 text-justify">
-                            This concept was designed to reflect the essence of modern photography.
+                            This concept was designed to embody the essence of modern photography, reimagined through the lens of AI.
                         </p>
                     </div>
                     <VariableProximity
