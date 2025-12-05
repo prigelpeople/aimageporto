@@ -100,13 +100,25 @@ const AboutSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="my-auto"
+            className="my-auto flex items-start gap-6"
          >
              <h2 className="text-[12vw] md:text-[7vw] font-normal leading-[0.9] text-slate-900 tracking-tighter">
                  We Design<br/>
                  The Story<br/>
                  <span className="text-gray-300">Behind Every<br/>Frame</span>
              </h2>
+             
+             {/* Feature Image */}
+             <div 
+               className="hidden md:block w-[280px] lg:w-[350px] aspect-[4/3] overflow-hidden cursor-zoom-in flex-shrink-0 mt-8"
+               onClick={() => openLightbox(`${BASE_URL}images/gallery1.jpg`)}
+             >
+               <img 
+                 src={`${BASE_URL}images/gallery1.jpg`}
+                 alt="Creative vision" 
+                 className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+               />
+             </div>
          </motion.div>
 
          {/* Image Grid - 3 images layout */}
