@@ -1,22 +1,37 @@
 import React from 'react';
-import { Menu } from 'lucide-react';
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-6 md:px-12 bg-[#F9F9F9]/90 backdrop-blur-sm transition-all duration-300">
-      <div className="flex items-center gap-4">
-        <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
-          <Menu className="w-6 h-6" />
-        </button>
-      </div>
-      
-      <div className="absolute left-1/2 transform -translate-x-1/2">
-        <h1 className="text-sm md:text-base font-bold tracking-[0.2em] uppercase">Rachmatulla | PrigelPeople</h1>
-      </div>
+    <header className="fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-4 md:pt-6">
+      <nav className="flex items-center justify-between w-full max-w-4xl bg-white rounded-full px-6 py-3 md:px-8 md:py-4 shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
+        {/* Logo */}
+        <a href="#" className="text-lg md:text-xl font-bold tracking-tight text-black">
+          PrigelPeople
+        </a>
 
-      <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-gray-500 uppercase tracking-wider">
-        <a href="#" className="hover:text-black transition-colors">Home</a>
-        <a href="#" className="hover:text-black transition-colors">Contact</a>
+        {/* Navigation Links */}
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <a href="#" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+            Home
+          </a>
+          <a href="#" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+            Features
+          </a>
+          <a href="#" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+            
+          </a>
+          <a href="#" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+            
+          </a>
+        </div>
+
+        {/* CTA Button */}
+        <a 
+          href="#" 
+          className="bg-gray-100 hover:bg-gray-200 text-black text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+        >
+          Contact Us
+        </a>
       </nav>
     </header>
   );
