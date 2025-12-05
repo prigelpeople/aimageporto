@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MasonryGallery } from '../hero';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -27,7 +29,7 @@ const AboutSection: React.FC = () => {
                     className="w-2/3 aspect-[3/4] overflow-hidden"
                 >
                     <img 
-                      src="/images/blonde1.jpg" 
+                      src={`${BASE_URL}images/blonde1.jpg`}
                       alt="Sophia Portrait" 
                       className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform" 
                     />
@@ -37,7 +39,7 @@ const AboutSection: React.FC = () => {
                      className="w-1/3 aspect-[3/4] overflow-hidden mb-12"
                 >
                     <img 
-                      src="/images/blonde2.jpg" 
+                      src={`${BASE_URL}images/blonde2.jpg`}
                       alt="Sophia Detail" 
                       className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform" 
                     />
@@ -114,7 +116,7 @@ const AboutSection: React.FC = () => {
             {/* Large image left */}
             <div className="w-1/2 aspect-[3/4] overflow-hidden">
               <img 
-                src="/images/wolf.jpg" 
+                src={`${BASE_URL}images/wolf.jpg`}
                 alt="Studio work" 
                 className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
               />
@@ -123,14 +125,14 @@ const AboutSection: React.FC = () => {
             <div className="w-1/2 flex flex-col gap-3">
               <div className="flex-1 overflow-hidden">
                 <img 
-                  src="/images/horse.jpg" 
+                  src={`${BASE_URL}images/horse.jpg`}
                   alt="Creative process" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                 />
               </div>
               <div className="h-[45%] overflow-hidden">
                 <img 
-                  src="/images/desert.jpg" 
+                  src={`${BASE_URL}images/desert.jpg`}
                   alt="Behind the scenes" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                 />

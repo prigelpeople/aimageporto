@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Play } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -29,7 +31,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="aspect-[4/5] overflow-hidden">
             <img 
-              src="/images/photographer.jpg" 
+              src={`${BASE_URL}images/photographer.jpg`}
               alt="Photographer" 
               className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform"
             />
@@ -77,7 +79,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="w-2/3 aspect-[3/4] overflow-hidden">
             <img 
-              src="/images/sunglasses.jpg" 
+              src={`${BASE_URL}images/sunglasses.jpg`}
               alt="Model" 
               className="w-full h-full object-cover transition-all duration-700 ease-[0.22,1,0.36,1] hover:scale-105 will-change-transform"
             />

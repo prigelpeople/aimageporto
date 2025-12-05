@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import GalleryItemCard from './GalleryItemCard';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 interface GalleryItem {
   src: string;
   alt: string;
@@ -15,12 +17,12 @@ interface ExtendedGallerySectionProps {
 
 const ExtendedGallerySection: React.FC<ExtendedGallerySectionProps> = ({ items }) => {
   const defaultItems: GalleryItem[] = [
-    { src: "/images/gallery1.jpg", alt: "Gallery 1", title: "Urban Dreams", tags: ["Portrait", "Editorial"] },
-    { src: "/images/gallery2.jpg", alt: "Gallery 2", title: "Natural Light", tags: ["Nature", "Lifestyle"] },
-    { src: "/images/gallery3.jpg", alt: "Gallery 3", title: "Studio Session", tags: ["Fashion", "Studio"] },
-    { src: "/images/gallery4.jpg", alt: "Gallery 4", title: "Street Style", tags: ["Street", "Documentary"] },
-    { src: "/images/gallery5.jpg", alt: "Gallery 5", title: "Golden Hour", tags: ["Outdoor", "Portrait"] },
-    { src: "/images/gallery6.jpg", alt: "Gallery 6", title: "Minimalist", tags: ["Product", "Commercial"] },
+    { src: `${BASE_URL}images/gallery1.jpg`, alt: "Gallery 1", title: "Urban Dreams", tags: ["Portrait", "Editorial"] },
+    { src: `${BASE_URL}images/gallery2.jpg`, alt: "Gallery 2", title: "Natural Light", tags: ["Nature", "Lifestyle"] },
+    { src: `${BASE_URL}images/gallery3.jpg`, alt: "Gallery 3", title: "Studio Session", tags: ["Fashion", "Studio"] },
+    { src: `${BASE_URL}images/gallery4.jpg`, alt: "Gallery 4", title: "Street Style", tags: ["Street", "Documentary"] },
+    { src: `${BASE_URL}images/gallery5.jpg`, alt: "Gallery 5", title: "Golden Hour", tags: ["Outdoor", "Portrait"] },
+    { src: `${BASE_URL}images/gallery6.jpg`, alt: "Gallery 6", title: "Minimalist", tags: ["Product", "Commercial"] },
   ];
 
   const displayItems = items || defaultItems;

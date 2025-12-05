@@ -4,27 +4,29 @@ import { motion } from 'framer-motion';
 import WorkflowStep from './WorkflowStep';
 import { VariableProximity } from '../ui';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const LogoMarquee: React.FC = () => {
   const logos = [
     { 
       name: "GOOGLE GEMINI", 
-      logo: "/logos/gemini.svg"
+      logo: `${BASE_URL}logos/gemini.svg`
     },
     { 
       name: "SEEDREAMS", 
-      logo: "/logos/seedreams.svg"
+      logo: `${BASE_URL}logos/seedreams.svg`
     },
     { 
       name: "FLUX", 
-      logo: "/logos/flux.svg"
+      logo: `${BASE_URL}logos/flux.svg`
     },
     { 
       name: "COMFYUI", 
-      logo: "/logos/comfyui.svg"
+      logo: `${BASE_URL}logos/comfyui.svg`
     },
     { 
       name: "MIDJOURNEY", 
-      logo: "/logos/midjourney.svg"
+      logo: `${BASE_URL}logos/midjourney.svg`
     },
   ];
 
@@ -108,7 +110,7 @@ const BeforeAfterSlider: React.FC = () => {
         onTouchStart={handleTouchStart}
     >
       <img 
-        src="/images/compare2.jpg" 
+        src={`${BASE_URL}images/compare2.jpg`}
         alt="After" 
         className="absolute inset-0 w-full h-full object-cover"
         draggable={false}
@@ -123,7 +125,7 @@ const BeforeAfterSlider: React.FC = () => {
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-            src="/images/compare1.jpg" 
+            src={`${BASE_URL}images/compare1.jpg`}
             alt="Before" 
             className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
@@ -214,7 +216,7 @@ const WorkflowSection: React.FC = () => {
                       className="text-[10vw] md:text-[7vw] lg:text-[7.5vw] leading-[0.9] tracking-tighter uppercase"
                     />
                     <span className="inline-block w-[12vw] h-[8vw] md:w-[6.5vw] md:h-[4.5vw] overflow-hidden rounded-md bg-gray-800 self-center mt-1 md:mt-2 transform rotate-2">
-                        <img src="/images/concert.jpg" className="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-500" alt="icon" />
+                        <img src={`${BASE_URL}images/concert.jpg`} className="w-full h-full object-cover opacity-80 hover:scale-110 transition-transform duration-500" alt="icon" />
                     </span>
                     <VariableProximity
                       label="BECOMES YOUR"
@@ -238,7 +240,7 @@ const WorkflowSection: React.FC = () => {
                       className="text-[10vw] md:text-[7vw] lg:text-[7.5vw] leading-[0.9] tracking-tighter uppercase"
                     />
                     <span className="inline-block w-[16vw] h-[10vw] md:w-[9vw] md:h-[5.5vw] overflow-hidden rounded-md bg-gray-800 self-center mt-1 md:mt-2 -rotate-2">
-                        <img src="/images/nature.jpg" className="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500" alt="visual" />
+                        <img src={`${BASE_URL}images/nature.jpg`} className="w-full h-full object-cover opacity-90 hover:scale-110 transition-transform duration-500" alt="visual" />
                     </span>
                     <VariableProximity
                       label="A"

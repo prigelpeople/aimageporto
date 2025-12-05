@@ -1,18 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 interface MasonryGalleryProps {
   images?: string[];
 }
 
 const MasonryGallery: React.FC<MasonryGalleryProps> = ({ images }) => {
   const defaultImages = [
-    "/images/masonry1.jpg",
-    "/images/masonry2.jpg",
-    "/images/masonry3.jpg",
-    "/images/masonry4.jpg",
-    "/images/masonry5.jpg",
-    "/images/masonry6.jpg",
+    `${BASE_URL}images/masonry1.jpg`,
+    `${BASE_URL}images/masonry2.jpg`,
+    `${BASE_URL}images/masonry3.jpg`,
+    `${BASE_URL}images/masonry4.jpg`,
+    `${BASE_URL}images/masonry5.jpg`,
+    `${BASE_URL}images/masonry6.jpg`,
   ];
 
   const displayImages = images || defaultImages;
