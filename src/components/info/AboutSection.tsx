@@ -110,11 +110,11 @@ const AboutSection: React.FC = () => {
              
              {/* Feature Image */}
              <div 
-               className="hidden md:block w-[280px] lg:w-[350px] aspect-[4/3] overflow-hidden cursor-zoom-in flex-shrink-0 mt-8"
-               onClick={() => openLightbox(`${BASE_URL}images/gallery1.jpg`)}
+               className="hidden md:block w-[280px] lg:w-[350px] aspect-[4/5] overflow-hidden cursor-zoom-in flex-shrink-0 mt-8"
+               onClick={() => openLightbox(`${BASE_URL}images/eye.jpg`)}
              >
                <img 
-                 src={`${BASE_URL}images/gallery1.jpg`}
+                 src={`${BASE_URL}images/eye.jpg`}
                  alt="Creative vision" 
                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                />
