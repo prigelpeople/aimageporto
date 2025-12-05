@@ -64,27 +64,42 @@ const LogoMarquee: React.FC = () => {
 const BeforeAfterSlider: React.FC = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleMove = (clientX: number) => {
+  const handleMove = (clientX: number, clientY: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const y = clientY - rect.top;
     const percent = (x / rect.width) * 100;
     setSliderPosition(percent);
+    setMousePos({ x, y });
   };
 
-  const handleMouseDown = () => setIsDragging(true);
-  const handleTouchStart = () => setIsDragging(true);
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    }
+  };
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePos({ x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top });
+    }
+  };
 
   useEffect(() => {
     const handleWindowMove = (e: MouseEvent) => {
-      if (isDragging) handleMove(e.clientX);
+      if (isDragging) handleMove(e.clientX, e.clientY);
     };
     const handleWindowUp = () => setIsDragging(false);
     
     const handleWindowTouchMove = (e: TouchEvent) => {
-        if (isDragging) handleMove(e.touches[0].clientX);
+        if (isDragging) handleMove(e.touches[0].clientX, e.touches[0].clientY);
     };
     const handleWindowTouchEnd = () => setIsDragging(false);
 
@@ -144,14 +159,22 @@ const BeforeAfterSlider: React.FC = () => {
         </div>
       </div>
       
+      {/* Floating popup that follows mouse when dragging */}
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-        viewport={{ once: true }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-black/50 text-xs tracking-widest pointer-events-none"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ 
+          opacity: isDragging ? 1 : 0,
+          scale: isDragging ? 1 : 0.8,
+          x: mousePos.x,
+          y: mousePos.y - 50
+        }}
+        transition={{ duration: 0.15, ease: "easeOut" }}
+        className="absolute top-0 left-0 -translate-x-1/2 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-full pointer-events-none z-30"
+        style={{ willChange: 'transform' }}
       >
-        DRAG TO COMPARE
+        <span className="text-[10px] font-bold tracking-[0.15em] text-white whitespace-nowrap">
+          DRAG TO COMPARE
+        </span>
       </motion.div>
     </div>
   );
