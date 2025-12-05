@@ -1,20 +1,88 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Prigel People - AI Image Showcase
 
-# Run and deploy your AI Studio app
+A minimalist, high-contrast creative studio portfolio website built with Vite + React + TypeScript.
 
-This contains everything you need to run your app locally.
+## Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+[https://prigelpeople.github.io/aimageshowcase/](https://prigelpeople.github.io/aimageshowcase/)
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling (via CDN)
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
 
+## Local Development
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/prigelpeople/aimageshowcase.git
+cd aimageshowcase
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The site will be available at `http://localhost:3000`
+
+### Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run type-check` | Run TypeScript type checking |
+| `npm run clean` | Clean build artifacts |
+
+## Deployment
+
+This project auto-deploys to GitHub Pages on every push to `main` branch via GitHub Actions.
+
+### Manual Deployment
+
+```bash
+# Build the project
+npm run build
+
+# The dist/ folder contains the production build
+```
+
+## Project Structure
+
+```
+├── .github/workflows/    # GitHub Actions
+├── public/
+│   ├── images/          # Local images
+│   └── logos/           # Brand logos
+├── src/
+│   ├── components/
+│   │   ├── gallery/     # Gallery components
+│   │   ├── hero/        # Hero section
+│   │   ├── info/        # About/Contact
+│   │   ├── layout/      # Header/Footer
+│   │   ├── ui/          # Reusable UI
+│   │   └── workflow/    # Process section
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── vite.config.ts
+└── tsconfig.json
+```
+
+## License
+
+All rights reserved. © 2024 Prigel People
