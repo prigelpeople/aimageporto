@@ -84,6 +84,16 @@ const BeforeAfterSlider: React.FC = () => {
     },
   };
 
+  const totalTabs = Object.keys(imagePairs).length;
+
+  // Auto slideshow every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev % totalTabs) + 1);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [totalTabs]);
+
   const handleMove = (clientX: number, clientY: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
