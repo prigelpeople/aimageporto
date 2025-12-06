@@ -61,11 +61,28 @@ const LogoMarquee: React.FC = () => {
   );
 };
 
+interface CompareImage {
+  before: string;
+  after: string;
+}
+
 const BeforeAfterSlider: React.FC = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [activeTab, setActiveTab] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const imagePairs: Record<number, CompareImage> = {
+    1: {
+      before: `${BASE_URL}images/compare1.jpg`,
+      after: `${BASE_URL}images/compare2.jpg`,
+    },
+    2: {
+      before: `${BASE_URL}images/compare4.jpg`,
+      after: `${BASE_URL}images/compare3.jpg`,
+    },
+  };
 
   const handleMove = (clientX: number, clientY: number) => {
     if (!containerRef.current) return;
@@ -118,37 +135,55 @@ const BeforeAfterSlider: React.FC = () => {
   }, [isDragging]);
 
   return (
-    <div 
-        ref={containerRef} 
-        className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden cursor-ew-resize select-none bg-gray-900"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-    >
-      <img 
-        src={`${BASE_URL}images/compare2.jpg`}
-        alt="After" 
-        className="absolute inset-0 w-full h-full object-cover"
-        draggable={false}
-      />
-      
-       <div className="absolute top-8 right-6 md:right-12 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full z-10 pointer-events-none">
-          <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white">PROCESSED</span>
-       </div>
+    <div className="relative w-full">
+      {/* Tabs */}
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        {[1, 2].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
+              activeTab === tab
+                ? 'bg-white text-black'
+                : 'bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-white/20'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
       <div 
-        className="absolute inset-0 w-full h-full"
-        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+          ref={containerRef} 
+          className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden cursor-ew-resize select-none bg-gray-900"
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
       >
         <img 
-            src={`${BASE_URL}images/compare1.jpg`}
-            alt="Before" 
-            className="absolute inset-0 w-full h-full object-cover"
-            draggable={false}
+          src={imagePairs[activeTab].after}
+          alt="After" 
+          className="absolute inset-0 w-full h-full object-cover"
+          draggable={false}
         />
-        <div className="absolute top-8 left-6 md:left-12 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full z-10 pointer-events-none">
-            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white">RAW SOURCE</span>
+        
+        <div className="absolute top-8 right-6 md:right-12 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full z-10 pointer-events-none">
+            <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white">PROCESSED</span>
         </div>
-      </div>
+
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+        >
+          <img 
+              src={imagePairs[activeTab].before}
+              alt="Before" 
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+          />
+          <div className="absolute top-8 left-6 md:left-12 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full z-10 pointer-events-none">
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white">RAW SOURCE</span>
+          </div>
+        </div>
 
       <div 
         className="absolute top-0 bottom-0 w-[1px] bg-white cursor-ew-resize z-20"
@@ -176,6 +211,7 @@ const BeforeAfterSlider: React.FC = () => {
           DRAG TO COMPARE
         </span>
       </motion.div>
+      </div>
     </div>
   );
 };
